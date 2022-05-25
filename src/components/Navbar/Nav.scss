@@ -1,33 +1,69 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_typefaces.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
 .nav {
     display: flex;
     padding: 1rem;
+    flex-direction: column;
 
     &__logo {
-        display: flex;
-        justify-content: center;
-        width: 10rem;
-        height: 5rem;
+        width: 100%;
+        height: 1.5rem;
         background-position: center;
+        background-size: contain;
         background-repeat: no-repeat;
         background-image: url("../../assets/images/logo/brainflix-logo.svg");
+        margin-bottom: 1rem;
     }
 
     &__search {
-        width: 80%;
+        padding-left: 2rem;
+        background-image: url("../../assets/images/icons/search.svg");
+        background-position: 4% center;
+        background-size: 7%;
+        background-repeat: no-repeat;
+        border-radius: 4px;
+        background-color: $secondary-lighter;
+        border: 1px solid $secondary-light;
+        width: 12.7rem;
+        height: 2.2rem;
+
+        &::placeholder {
+            color: $primary-dark;
+        }
+
+        &-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__avatar {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        background-position: 20% 0;
+        background-size: cover;
         background-image: url("../../assets/images/mohan-muruge.jpg");
         border-radius: 50%;
+        margin-bottom: 1rem;
     }
 
     &__button {
-        background-color: blue;
+        height: 2.5rem;
+        background-position: 4% center;
+        background-repeat: no-repeat;
+        background-color: $primary-color;
+        background-image: url("../../assets/images/icons/upload.svg");
+        background-size: 7%;
         border-radius: 4px;
-        color: white;
-
-        &-icon {
-            position: relative;
-        }
+        color: $primary-lighter;
+        border: none;
+        text-transform: uppercase;
+        font-size: 0.73rem;
+        font-weight: 500;
     }
 }
