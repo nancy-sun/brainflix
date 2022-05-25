@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    padding: 1rem;
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        width: 10rem;
+        height: 5rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/images/logo/brainflix-logo.svg");
+    }
+
+    &__search {
+        width: 80%;
+    }
+
+    &__avatar {
+        background-image: url("../../assets/images/mohan-muruge.jpg");
+        border-radius: 50%;
+    }
+
+    &__button {
+        background-color: blue;
+        border-radius: 4px;
+        color: white;
+
+        &-icon {
+            position: relative;
+        }
+    }
+}
