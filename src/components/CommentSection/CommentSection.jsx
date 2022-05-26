@@ -1,15 +1,13 @@
 import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
 
-function CommentSection() {
-
+export default function CommentSection({ comments }) {
     return (
         <div className="comment">
-            <p className="comment__total">3 comments</p>
+            <p className="comment__total">{comments.length} {comments.length > 1 ? "comments" : "comment"}</p>
             <CommentForm />
-            <CommentList />
+            <CommentList comments={comments} />
         </div>
     )
 }
 
-export default CommentSection;

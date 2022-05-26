@@ -1,4 +1,4 @@
-function CommentForm() {
+export default function CommentForm() {
     return (
         <div className="comment__form">
             <form>
@@ -10,6 +10,3 @@ function CommentForm() {
         </div>
     )
 }
-
-
-export default CommentForm;
