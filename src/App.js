@@ -1,8 +1,9 @@
-import './App.scss';
-import Nav from './components/Navbar/Nav';
-import Main from './components/Main/Main';
+import "./App.scss";
+import Nav from "./components/Navbar/Nav";
+import Main from "./components/Main/Main";
 
-function App() {
+export default function App() {
+
   return (
     <>
       <Nav />
@@ -11,4 +12,3 @@ function App() {
   )
 }
 
-export default App;

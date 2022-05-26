@@ -1,26 +1,26 @@
 import CommentSection from "../CommentSection/CommentSection";
 
-function VideoDetails() {
-
+export default function VideoDetails({ currentVideo: { title, channel, timestamp, views, likes, description } }) {
+    let uploadDate = new Date(timestamp);
+    console.log(uploadDate);
     return (
         <div className="video__details">
             <div className="video__context">
                 <div className="video__head">
-                    <h1 className="video__title">Title</h1>
+                    <h1 className="video__title">{title}</h1>
                     <div className="video__info">
-                        <p className="video__author">By author</p>
-                        <p className="video__date">date</p>
-                        <div className="video__views">1235</div>
-                        <div className="video__likes">12345</div>
+                        <p className="video__channel">{channel}</p>
+                        <p className="video__date">{ }</p>
+                        <div className="video__views">{views}</div>
+                        <div className="video__likes">{likes}</div>
                     </div>
                 </div>
-                <p className="video__about">about this video</p>
+                <p className="video__description">{description}</p>
             </div>
             <CommentSection />
         </div>
     )
 }
 
-export default VideoDetails;
 
 
