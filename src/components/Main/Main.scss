@@ -3,7 +3,12 @@
 @use "../../styles/partials/_typefaces.scss" as *;
 @use "../../styles/partials/_variables.scss" as *;
 
+.video {
+    &__body {
+        padding: 1rem;
+    }
 
-.video__hero {
-    width: 100vw;
+    &__hero {
+        width: 100vw;
+    }
 }

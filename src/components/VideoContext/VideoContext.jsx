@@ -1,12 +1,12 @@
 import CommentSection from "../CommentSection/CommentSection";
-import "./VideoDetails.scss";
+import "./VideoContext.scss";
 
-export default function VideoDetails({ currentVideo: { title, channel, timestamp, views, likes, description, comments } }) {
+export default function VideoContext({ currentVideo: { title, channel, timestamp, views, likes, description, comments } }) {
     let date = new Date(timestamp).toLocaleDateString();
 
     return (
-        <div className="video__details">
-            <div className="video__context">
+        <div className="video__context">
+            <div className="video__text">
                 <div className="video__about">
                     <h1 className="video__title">{title}</h1>
                     <div className="video__head">

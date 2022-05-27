@@ -1,14 +1,10 @@
 .video {
 
-    &__body {
-        padding: 1rem;
-    }
-
-    &__details {
+    &__context {
         //placeholder;
     }
 
-    &__context {
+    &__text {
         display: flex;
         flex-direction: column;
     }

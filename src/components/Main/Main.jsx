@@ -1,14 +1,15 @@
 import React from "react";
-import VideoDetails from "../VideoDetails/VideoDetails";
+import VideoContext from "../VideoContext/VideoContext";
 import Playlist from "../Playlist/Playlist";
-import videos from "../../data/video-details.json";
+import videoDetails from "../../data/video-details.json";
+import videos from "../../data/videos.json";
 import "./Main.scss"
 
 
 export default class Main extends React.Component {
 
     state = {
-        currentVideo: videos[0],
+        currentVideo: videoDetails[0],
         videoList: videos
     }
 
@@ -27,7 +28,7 @@ export default class Main extends React.Component {
                     <source src={this.state.currentVideo.video} type="video/mp4" />
                 </video>
                 <div className="video__body">
-                    <VideoDetails currentVideo={this.state.currentVideo} />
+                    <VideoContext currentVideo={this.state.currentVideo} />
                     <Playlist videoList={this.state.videoList} currentVideo={this.state.currentVideo} changeVideoList={this.changeVideoList} changeCurrentVideo={this.changeCurrentVideo} />
                 </div>
             </main>
