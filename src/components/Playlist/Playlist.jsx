@@ -1,4 +1,5 @@
 import "./Playlist.scss";
+import videoDetails from "../../data/video-details.json";
 
 export default function Playlist({ videoList, changeVideoList, currentVideo, changeCurrentVideo }) {
     return (
@@ -6,11 +7,16 @@ export default function Playlist({ videoList, changeVideoList, currentVideo, cha
             <p className="playlist__title">next videos</p>
             <ul className="playlist__list">
                 {videoList.filter(video => video.id !== currentVideo.id).map(video => {
+                    console.log(video);
                     return (
                         <li key={video.id}>
                             <a className="playlist__item" onClick={() => {
-                                changeCurrentVideo(video);
                                 changeVideoList(videoList);
+                                videoDetails.forEach((videoObj) => {
+                                    if (videoObj.id === video.id) {
+                                        changeCurrentVideo(videoObj);
+                                    }
+                                })
                             }}>
                                 <div className="playlist__cover" style={{
                                     backgroundImage: `url(${video.image})`
