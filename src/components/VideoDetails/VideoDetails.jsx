@@ -2,7 +2,6 @@ import CommentSection from "../CommentSection/CommentSection";
 import "./VideoDetails.scss";
 
 export default function VideoDetails({ currentVideo: { title, channel, timestamp, views, likes, description, comments } }) {
-
     let date = new Date(timestamp).toLocaleDateString();
 
     return (

@@ -1,0 +1,25 @@
+.comment {
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__avatar {
+        width: 36px;
+        height: 36px;
+        background-color: green;
+        border-radius: 50%;
+    }
+
+    &__context {
+        display: flex;
+        flex-direction: column;
+        width: 82%;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+}

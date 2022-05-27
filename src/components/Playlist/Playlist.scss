@@ -2,3 +2,23 @@
 @use "../../styles/partials/_reset.scss" as *;
 @use "../../styles/partials/_typefaces.scss" as *;
 @use "../../styles/partials/_variables.scss" as *;
+
+.playlist {
+
+    &__item {
+        color: $primary-dark;
+    }
+
+    &__title {
+        text-transform: uppercase;
+
+    }
+
+    &__cover {
+        width: 10rem;
+        height: 5rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+    }
+}

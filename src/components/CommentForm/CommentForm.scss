@@ -2,3 +2,37 @@
 @use "../../styles/partials/_reset.scss" as *;
 @use "../../styles/partials/_typefaces.scss" as *;
 @use "../../styles/partials/_variables.scss" as *;
+
+
+.comment {
+
+    &__post {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        &-avatar {
+            width: 36px;
+            height: 36px;
+            background-color: green;
+            border-radius: 50%;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+    }
+
+    &__input {
+        resize: none;
+    }
+
+    &__submit {
+        text-transform: uppercase;
+    }
+}

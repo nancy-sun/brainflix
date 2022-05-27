@@ -1,15 +1,14 @@
 import React from "react";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import Playlist from "../Playlist/Playlist";
-import videos from "../../data/videos.json"
-import videoData from "../../data/video-details.json";
+import videos from "../../data/video-details.json";
 import "./Main.scss"
 
 
 export default class Main extends React.Component {
 
     state = {
-        currentVideo: videoData[0],
+        currentVideo: videos[0],
         videoList: videos
     }
 
@@ -17,6 +16,9 @@ export default class Main extends React.Component {
         this.setState({ currentVideo: videoObj });
     }
 
+    changeVideoList = (videosArr) => {
+        this.setState({ videoList: videosArr });
+    }
 
     render() {
         return (
@@ -26,7 +28,7 @@ export default class Main extends React.Component {
                 </video>
                 <div className="video__body">
                     <VideoDetails currentVideo={this.state.currentVideo} />
-                    <Playlist />
+                    <Playlist videoList={this.state.videoList} currentVideo={this.state.currentVideo} changeVideoList={this.changeVideoList} changeCurrentVideo={this.changeCurrentVideo} />
                 </div>
             </main>
         )
