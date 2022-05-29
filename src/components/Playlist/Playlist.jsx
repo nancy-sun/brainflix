@@ -4,10 +4,9 @@ import videoDetails from "../../data/video-details.json";
 export default function Playlist({ videoList, changeVideoList, currentVideo, changeCurrentVideo }) {
     return (
         <section className="playlist">
-            <p className="playlist__title">next videos</p>
+            <p className="playlist__headline">next videos</p>
             <ul className="playlist__list">
                 {videoList.filter(video => video.id !== currentVideo.id).map(video => {
-                    console.log(video);
                     return (
                         <li key={video.id}>
                             <a className="playlist__item" onClick={() => {

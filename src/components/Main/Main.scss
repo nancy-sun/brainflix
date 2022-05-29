@@ -4,11 +4,23 @@
 @use "../../styles/partials/_variables.scss" as *;
 
 .video {
-    &__body {
-        padding: 1rem;
-    }
-
     &__hero {
         width: 100vw;
+        height: 11rem;
+        object-fit: cover;
+
+        @include tablet {
+            height: 24.5rem;
+            object-fit: contain;
+            background-color: black;
+        }
+    }
+
+    &__body {
+        padding: 0.8rem 0.8rem 0.4rem;
+
+        @include tablet {
+            padding: 1.1rem 2.5rem 1.4rem;
+        }
     }
 }

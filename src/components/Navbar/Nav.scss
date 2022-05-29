@@ -8,6 +8,13 @@
     padding: 1rem;
     flex-direction: column;
 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2.2rem 1rem 1.9rem;
+    }
+
     &__logo {
         width: 100%;
         height: 1.5rem;
@@ -16,6 +23,13 @@
         background-repeat: no-repeat;
         background-image: url("../../assets/images/logo/brainflix-logo.svg");
         margin-bottom: 1rem;
+
+        @include tablet {
+            width: 14rem;
+            height: 40px;
+            margin: 0;
+            background-size: 7rem;
+        }
     }
 
     &__search {
@@ -28,7 +42,12 @@
         background-color: $secondary-lighter;
         border: 1px solid $secondary-light;
         width: 12.7rem;
-        height: 2.2rem;
+        height: 40px;
+
+        @include tablet {
+            position: relative;
+            left: 6.6rem;
+        }
 
         &::placeholder {
             color: $primary-dark;
@@ -39,31 +58,35 @@
             display: flex;
             justify-content: space-between;
         }
+
     }
 
     &__avatar {
-        width: 2.2rem;
-        height: 2.2rem;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         background-position: 20% 0;
         background-size: cover;
         background-image: url("../../assets/images/mohan-muruge.jpg");
         border-radius: 50%;
         margin-bottom: 1rem;
+
+        @include tablet {
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            position: relative;
+            left: 13.4rem;
+        }
     }
 
     &__button {
-        height: 2.5rem;
-        background-position: 4% center;
-        background-repeat: no-repeat;
-        background-color: $primary-color;
-        background-image: url("../../assets/images/icons/upload.svg");
-        background-size: 23px;
-        border-radius: 4px;
-        color: $primary-lighter;
-        border: none;
-        text-transform: uppercase;
-        font-size: 0.73rem;
-        font-weight: 500;
+        @include buttonWithIcon("../../assets/images/icons/upload.svg", 23px);
+        background-position: 0.5rem center;
+
+        @include tablet {
+            width: 18.8rem;
+            margin-right: 3.8rem;
+        }
     }
 }

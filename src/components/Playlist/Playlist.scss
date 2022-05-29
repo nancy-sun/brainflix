@@ -4,21 +4,62 @@
 @use "../../styles/partials/_variables.scss" as *;
 
 .playlist {
+    &__headline {
+        text-transform: uppercase;
+        color: $primary-light;
+        font-size: 0.78rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 1.5rem;
+        }
+    }
 
     &__item {
         color: $primary-dark;
-    }
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+        height: 4rem;
 
-    &__title {
-        text-transform: uppercase;
-
+        @include tablet {
+            width: 43.5%;
+        }
     }
 
     &__cover {
-        width: 10rem;
-        height: 5rem;
+        min-width: 6.8rem;
         background-size: cover;
         background-position: center;
         border-radius: 5px;
+
+        @include tablet {
+            min-width: 7rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 0.82rem;
+        font-weight: 500;
+
+        @include tablet {
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+    }
+
+    &__channel {
+        font-size: 0.77rem;
+
+        @include tablet {
+            font-size: 0.8rem;
+        }
     }
 }

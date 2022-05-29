@@ -1,25 +1,73 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_typefaces.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
 .comment {
 
     &__item {
         display: flex;
         justify-content: space-between;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid $secondary-light;
+
+        @include tablet {
+            padding: 1.5rem 0;
+        }
     }
 
     &__avatar {
         width: 36px;
         height: 36px;
-        background-color: green;
+        background-color: $secondary-light;
         border-radius: 50%;
+
+        @include tablet {
+            width: 42px;
+            height: 42px;
+        }
     }
 
     &__context {
         display: flex;
         flex-direction: column;
         width: 82%;
+
+        @include tablet {
+            width: 91.5%;
+        }
     }
 
     &__info {
         display: flex;
         justify-content: space-between;
+        font-size: 0.8rem;
+
+        @include tablet {
+            font-size: 0.88rem;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+
+        @include tablet {
+            font-weight: 500;
+        }
+    }
+
+    &__time {
+        color: $primary-light;
+    }
+
+    &__text {
+        margin-top: 0.6rem;
+        font-size: 0.82rem;
+
+        @include tablet {
+            font-size: 0.88rem;
+            line-height: 1.4rem;
+            margin-top: 0.45rem;
+        }
     }
 }

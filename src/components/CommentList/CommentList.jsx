@@ -1,4 +1,5 @@
-import Comment from "../Comment/Comment"
+import Comment from "../Comment/Comment";
+import "./CommentList.scss";
 
 export default function CommentList({ comments }) {
     return (

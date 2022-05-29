@@ -1,5 +1,6 @@
 import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
+import "./CommentSection.scss";
 
 export default function CommentSection({ comments }) {
     return (

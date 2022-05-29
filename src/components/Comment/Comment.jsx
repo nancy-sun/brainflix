@@ -10,7 +10,7 @@ export default function Comment({ commentObj }) {
                     <p className="comment__name">{commentObj.name}</p>
                     <p className="comment__time">{date}</p>
                 </div>
-                <p className="comments__text">{commentObj.comment}</p>
+                <p className="comment__text">{commentObj.comment}</p>
             </div>
         </li>
 
