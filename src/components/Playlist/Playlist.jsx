@@ -9,7 +9,7 @@ export default function Playlist({ videoList, changeVideoList, currentVideo, cha
                 {videoList.filter(video => video.id !== currentVideo.id).map(video => {
                     return (
                         <li key={video.id}>
-                            <a className="playlist__item" onClick={() => {
+                            <a href="#" className="playlist__item" onClick={() => {
                                 changeVideoList(videoList);
                                 videoDetails.forEach((videoObj) => {
                                     if (videoObj.id === video.id) {
@@ -17,9 +17,7 @@ export default function Playlist({ videoList, changeVideoList, currentVideo, cha
                                     }
                                 })
                             }}>
-                                <div className="playlist__cover" style={{
-                                    backgroundImage: `url(${video.image})`
-                                }}></div>
+                                <div className="playlist__cover" style={{ backgroundImage: `url(${video.image})` }}></div>
                                 <div className="playlist__info">
                                     <p className="playlist__title">{video.title}</p>
                                     <p className="playlist__channel">{video.channel}</p>

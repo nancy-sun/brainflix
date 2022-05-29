@@ -3,8 +3,7 @@ import VideoContext from "../VideoContext/VideoContext";
 import Playlist from "../Playlist/Playlist";
 import videoDetails from "../../data/video-details.json";
 import videos from "../../data/videos.json";
-import "./Main.scss"
-
+import "./Main.scss";
 
 export default class Main extends React.Component {
 
