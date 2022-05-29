@@ -14,6 +14,10 @@
             object-fit: contain;
             background-color: black;
         }
+
+        @include desktop {
+            height: 30rem;
+        }
     }
 
     &__body {
@@ -21,6 +25,11 @@
 
         @include tablet {
             padding: 1.1rem 2.5rem 1.4rem;
+        }
+
+        @include desktop {
+            display: flex;
+            padding: 0 8.1rem;
         }
     }
 }

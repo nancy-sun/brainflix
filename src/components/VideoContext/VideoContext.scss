@@ -6,6 +6,14 @@
 
 .video {
 
+    &__context {
+        @include desktop {
+            width: 100%;
+            border-right: 1px solid $secondary-light;
+            padding: 1.5rem 0 2rem;
+        }
+    }
+
     &__text {
         display: flex;
         flex-direction: column;
@@ -25,6 +33,11 @@
             font-size: 2rem;
             font-weight: 700;
             padding-bottom: 0;
+        }
+
+        @include desktop {
+            font-size: 2.1rem;
+            font-weight: 600;
         }
     }
 
@@ -56,6 +69,7 @@
 
     &__data {
         @extend .video__info;
+        padding-right: 1.7rem;
     }
 
     &__channel {
@@ -65,6 +79,10 @@
         @include tablet {
             font-weight: 600;
         }
+
+        @include desktop {
+            font-size: 0.9rem;
+        }
     }
 
     &__date {
@@ -73,6 +91,10 @@
 
         @include tablet {
             font-size: 0.75rem;
+        }
+
+        @include desktop {
+            font-size: 0.8rem;
         }
     }
 
@@ -87,6 +109,11 @@
 
         @include tablet {
             font-size: 0.75rem;
+        }
+
+        @include desktop {
+            font-size: 0.7rem;
+            background-size: contain
         }
     }
 
@@ -103,6 +130,11 @@
             font-size: 0.89rem;
             line-height: 1.4rem;
             padding: 1.5rem 0 1.9rem;
+        }
+
+        @include desktop {
+            font-size: 0.87rem;
+            padding: 1.6rem 1.7rem 2.5rem 0;
         }
     }
 }

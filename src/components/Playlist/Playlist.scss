@@ -4,6 +4,10 @@
 @use "../../styles/partials/_variables.scss" as *;
 
 .playlist {
+    @include tablet {
+        padding: 1.5rem 0 2rem 1.7rem;
+    }
+
     &__headline {
         text-transform: uppercase;
         color: $primary-light;
@@ -14,6 +18,10 @@
         @include tablet {
             margin-bottom: 1.5rem;
         }
+
+        @include desktop {
+            margin-bottom: 1rem;
+        }
     }
 
     &__item {
@@ -22,9 +30,14 @@
         gap: 1rem;
         margin-bottom: 0.8rem;
         height: 4rem;
+        cursor: pointer;
 
         @include tablet {
             width: 43.5%;
+        }
+
+        @include desktop {
+            width: 92%;
         }
     }
 
@@ -36,6 +49,10 @@
 
         @include tablet {
             min-width: 7rem;
+        }
+
+        @include desktop {
+            min-width: 6.5rem;
         }
     }
 
@@ -53,6 +70,11 @@
             font-size: 0.84rem;
             font-weight: 600;
         }
+
+        @include desktop {
+            font-size: 0.87rem;
+            font-weight: 600;
+        }
     }
 
     &__channel {
@@ -60,6 +82,10 @@
 
         @include tablet {
             font-size: 0.8rem;
+        }
+
+        @include desktop {
+            font-size: 0.83rem;
         }
     }
 }
