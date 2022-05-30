@@ -51,6 +51,7 @@
             }
 
             @include desktop {
+                margin-top: 1.25rem;
                 margin-left: 0.8rem;
             }
         }
@@ -86,8 +87,7 @@
         }
 
         @include desktop {
-            height: 1.48rem;
-            width: 25rem;
+            width: 26rem;
         }
 
         &::placeholder {
