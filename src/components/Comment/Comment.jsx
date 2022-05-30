@@ -1,5 +1,5 @@
-import "./Comment.scss";
 import getTimeElapsed from "../../utils/DateUtils";
+import "./Comment.scss";
 
 export default function Comment({ commentObj }) {
     const date = new Date(commentObj.timestamp);
