@@ -1,0 +1,125 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_typefaces.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
+
+.comment {
+
+    &__post {
+        padding: 1.2rem 0 1rem;
+        display: flex;
+        gap: 1rem;
+        border-bottom: 1px solid $secondary-light;
+
+        @include tablet {
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        @include desktop {
+            padding-right: 1.7rem;
+            padding: 1.5rem 1.7rem 0.5rem 0;
+        }
+    }
+
+    &__form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            width: 91.5%;
+        }
+
+        @include desktop {
+            width: 87%;
+        }
+
+        &-avatar {
+            margin-top: 1.5rem;
+            width: 36px;
+            height: 36px;
+            background-image: url("../../assets/images/mohan-muruge.jpg");
+            background-position: 20% 0;
+            background-size: cover;
+            border-radius: 50%;
+
+            @include tablet {
+                width: 40px;
+                height: 40px;
+            }
+
+            @include desktop {
+                margin-top: 1.25rem;
+                margin-left: 0.8rem;
+            }
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+        color: $primary-light;
+        font-weight: 500;
+
+        @include desktop {
+            font-size: 0.76rem;
+        }
+    }
+
+    &__input {
+        resize: none;
+        height: 5rem;
+        padding: 0.5rem;
+        background-color: $secondary-lighter;
+        margin-bottom: 1rem;
+        border: 1px $secondary-light solid;
+        border-radius: 4px;
+
+        @include tablet {
+            box-sizing: border-box;
+            height: 40px;
+            width: 28.5rem;
+            line-height: 24px;
+            overflow: hidden;
+        }
+
+        @include desktop {
+            width: 26rem;
+        }
+
+        &::placeholder {
+            color: $primary-dark;
+            padding-left: 0.5rem;
+        }
+
+        &:focus {
+            outline: 1px solid $primary-dark;
+        }
+    }
+
+    &__submit {
+        @include buttonWithIcon("../../assets/images/icons/add_comment.svg", 18px);
+        background-position: 0.7rem center;
+
+        @include tablet {
+            width: 9.5rem;
+        }
+
+        @include desktop {
+            width: 9rem;
+        }
+
+        &-wrap {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+}

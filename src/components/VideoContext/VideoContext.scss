@@ -1,0 +1,150 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_typefaces.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
+
+.video {
+
+    &__context {
+        @include desktop {
+            width: 100%;
+            border-right: 1px solid $secondary-light;
+            padding: 1.5rem 0 2rem;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-bottom: 0.75rem;
+
+        @include tablet {
+            font-size: 1.98rem;
+            font-weight: 700;
+            padding-bottom: 0;
+        }
+
+        @include desktop {
+            font-size: 2.11rem;
+            font-weight: 600;
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem 3.4rem 1rem 0;
+        border-top: 1px solid $secondary-light;
+        border-bottom: 1px solid $secondary-light;
+
+        @include tablet {
+            border-top: none;
+            padding: 0.6rem 0;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.7rem;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 2.2rem;
+            align-items: center
+        }
+    }
+
+    &__data {
+        @extend .video__info;
+
+        @include desktop {
+            padding-right: 1.7rem;
+            gap: 1.8rem;
+        }
+    }
+
+    &__channel {
+        font-size: 0.85rem;
+        font-weight: 500;
+
+        @include tablet {
+            font-weight: 600;
+        }
+
+        @include desktop {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__date {
+        font-size: 0.8rem;
+        color: $primary-light;
+
+        @include tablet {
+            font-size: 0.75rem;
+        }
+
+        @include desktop {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__views {
+        background-image: url("../../assets/images/icons/views.svg");
+        background-repeat: no-repeat;
+        background-size: 18.5px;
+        background-position: 0 center;
+        padding-left: 1.5rem;
+        font-size: 0.8rem;
+        color: $primary-light;
+
+        @include tablet {
+            font-size: 0.75rem;
+        }
+
+        @include desktop {
+            font-size: 0.7rem;
+            padding-left: 1.8rem;
+            background-size: contain
+        }
+    }
+
+    &__likes {
+        @extend .video__views;
+        background-image: url("../../assets/images/icons/likes.svg");
+
+        @include desktop {
+            padding-left: 1.5rem;
+        }
+    }
+
+    &__description {
+        padding: 1rem 0;
+        font-size: 0.82rem;
+        line-height: 1.2rem;
+
+        @include tablet {
+            font-size: 0.89rem;
+            line-height: 1.4rem;
+            padding: 1.5rem 0 1.9rem;
+        }
+
+        @include desktop {
+            font-size: 0.87rem;
+            padding: 1.6rem 1.7rem 2.5rem 0;
+        }
+    }
+}

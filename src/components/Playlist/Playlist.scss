@@ -1,0 +1,106 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_typefaces.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
+.playlist {
+    @include desktop {
+        padding: 1.7rem 0 2rem 1.7rem;
+    }
+
+    &__list {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+    }
+
+    &__headline {
+        text-transform: uppercase;
+        color: $primary-light;
+        font-size: 0.78rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 1.5rem;
+        }
+
+        @include desktop {
+            margin-bottom: 1.1rem;
+        }
+    }
+
+    &__item {
+        color: $primary-dark;
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+        height: 3.9rem;
+        cursor: pointer;
+
+        @include tablet {
+            width: 43.5%;
+            height: 4rem;
+        }
+
+        @include desktop {
+            width: 92%;
+        }
+    }
+
+    &__cover {
+        min-width: 6.7rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+
+        @include tablet {
+            min-width: 7rem;
+        }
+
+        @include desktop {
+            min-width: 6.5rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 0.83rem;
+        font-weight: 500;
+
+        @include tablet {
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+
+        @include desktop {
+            font-size: 0.87rem;
+            font-weight: 600;
+        }
+    }
+
+    &__channel {
+        font-size: 0.77rem;
+
+        @include tablet {
+            font-size: 0.8rem;
+        }
+
+        @include desktop {
+            font-size: 0.83rem;
+        }
+    }
+}

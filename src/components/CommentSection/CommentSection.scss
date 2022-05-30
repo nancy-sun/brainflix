@@ -1,0 +1,14 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_typefaces.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
+
+.comment__total {
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    @include tablet {
+        font-weight: 600;
+    }
+}
