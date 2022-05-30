@@ -7,7 +7,7 @@
 .comment {
 
     &__post {
-        padding: 1.5rem 0 1rem;
+        padding: 1.2rem 0 1rem;
         display: flex;
         gap: 1rem;
         border-bottom: 1px solid $secondary-light;
@@ -78,8 +78,11 @@
         border-radius: 4px;
 
         @include tablet {
-            height: 1.5rem;
-            width: 27rem;
+            box-sizing: border-box;
+            height: 40px;
+            width: 28.5rem;
+            line-height: 24px;
+            overflow: hidden;
         }
 
         @include desktop {
@@ -90,7 +93,6 @@
         &::placeholder {
             color: $primary-dark;
             padding-left: 0.5rem;
-            line-height: 24px;
         }
 
         &:focus {

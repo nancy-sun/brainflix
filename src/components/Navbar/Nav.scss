@@ -37,6 +37,7 @@
     }
 
     &__search {
+        box-sizing: border-box;
         padding-left: 2rem;
         background-image: url("../../assets/images/icons/search.svg");
         background-position: 4% center;
@@ -45,12 +46,12 @@
         border-radius: 4px;
         background-color: $secondary-lighter;
         border: 1px solid $secondary-light;
-        width: 12.7rem;
+        width: 15rem;
         height: 40px;
 
         @include tablet {
             position: relative;
-            left: 6.6rem;
+            left: 6.3rem;
         }
 
         @include desktop {
@@ -85,11 +86,11 @@
             height: 40px;
             margin: 0;
             position: relative;
-            left: 13.4rem;
+            left: 13.3rem;
         }
 
 
-        @include tablet {
+        @include desktop {
             left: 14rem;
         }
     }
@@ -99,8 +100,8 @@
         background-position: 0.5rem center;
 
         @include tablet {
-            width: 18.8rem;
-            margin-right: 3.8rem;
+            width: 18.5rem;
+            margin-right: 4.1rem;
         }
 
         @include desktop {

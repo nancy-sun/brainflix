@@ -4,7 +4,7 @@
 @use "../../styles/partials/_variables.scss" as *;
 
 .playlist {
-    @include tablet {
+    @include desktop {
         padding: 1.5rem 0 2rem 1.7rem;
     }
 
@@ -29,7 +29,7 @@
         display: flex;
         gap: 1rem;
         margin-bottom: 0.8rem;
-        height: 4rem;
+        height: 3.9rem;
         cursor: pointer;
 
         @include tablet {
@@ -42,7 +42,7 @@
     }
 
     &__cover {
-        min-width: 6.8rem;
+        min-width: 6.7rem;
         background-size: cover;
         background-position: center;
         border-radius: 5px;
@@ -63,7 +63,7 @@
     }
 
     &__title {
-        font-size: 0.82rem;
+        font-size: 0.83rem;
         font-weight: 500;
 
         @include tablet {

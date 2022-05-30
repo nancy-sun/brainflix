@@ -18,10 +18,10 @@
         @include desktop {
             padding-right: 1.7rem;
             margin-left: 0.8rem;
-        }
 
-        &:last-child {
-            border: none;
+            &:last-child {
+                border: none;
+            }
         }
     }
 
