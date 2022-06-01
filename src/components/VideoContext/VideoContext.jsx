@@ -4,6 +4,7 @@ import { printDateString } from "../../utils/DateUtils";
 
 export default function VideoContext({ currentVideo: { title, channel, timestamp, views, likes, description, comments } }) {
 
+
     return (
         <div className="video__context">
             <div className="video__text">
