@@ -2,8 +2,7 @@ import CommentSection from "../CommentSection/CommentSection";
 import "./VideoContext.scss";
 import { printDateString } from "../../utils/DateUtils";
 
-export default function VideoContext({ currentVideo: { title, channel, timestamp, views, likes, description, comments } }) {
-
+export default function VideoContext({ title, channel, timestamp, views, likes, description, comments }) {
 
     return (
         <div className="video__context">
