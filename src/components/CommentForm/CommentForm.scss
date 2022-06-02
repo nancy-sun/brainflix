@@ -10,7 +10,7 @@
         padding: 1.2rem 0 1rem;
         display: flex;
         gap: 1rem;
-        border-bottom: 1px solid $secondary-light;
+        border-bottom: $border;
 
         @include tablet {
             justify-content: space-between;
@@ -75,7 +75,7 @@
         padding: 0.5rem;
         background-color: $secondary-lighter;
         margin-bottom: 1rem;
-        border: 1px $secondary-light solid;
+        border: $border;
         border-radius: 4px;
 
         @include tablet {
@@ -92,7 +92,6 @@
 
         &::placeholder {
             color: $primary-dark;
-            padding-left: 0.5rem;
         }
 
         &:focus {

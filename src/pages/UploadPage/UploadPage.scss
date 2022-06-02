@@ -1,0 +1,87 @@
+@use "../../styles/partials/_reset.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+
+.upload {
+    border-top: $border;
+    padding: 1.3rem 0.8rem 1.5rem;
+
+    &__headline {
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding-bottom: 1rem;
+    }
+
+    &__thumbnail {
+        background-image: url("../../assets/images/upload-video-preview.jpg");
+        background-size: cover;
+        height: 10rem;
+        border-radius: 4px;
+
+        &-title {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            color: $primary-light;
+            font-weight: 500;
+            padding-bottom: 0.3rem;
+        }
+
+        &-wrap {
+            padding-bottom: 1.2rem;
+        }
+    }
+
+    &__label {
+        @extend .upload__thumbnail-title;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    &__title {
+        background-color: $secondary-lighter;
+        border: $border;
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+
+        &::placeholder {
+            color: $primary-dark;
+        }
+    }
+
+    &__description {
+        @extend .upload__title;
+        resize: none;
+        height: 4.8rem;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.3rem;
+        gap: 2rem;
+    }
+
+    &__publish {
+        @include buttonWithIcon("../../assets/images/icons/publish.svg", 23px);
+        background-position: 0.5rem center;
+    }
+
+    &__cancel {
+        height: 40px;
+        background-repeat: no-repeat;
+        background-color: white;
+        border: none;
+        border-radius: 4px;
+        color: $primary-color;
+        text-transform: uppercase;
+        font-size: 0.73rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+}

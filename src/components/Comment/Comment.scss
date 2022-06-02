@@ -9,7 +9,7 @@
         display: flex;
         justify-content: space-between;
         padding: 0.7rem 0;
-        border-bottom: 1px solid $secondary-light;
+        border-bottom: $border;
 
         @include tablet {
             padding: 1.5rem 0;
