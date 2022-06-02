@@ -1,14 +1,21 @@
-import "./App.scss";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Nav from "./components/Navbar/Nav";
 import Main from "./components/Main/Main";
-import { BrowserRouter, Link, Switch } from "react-router-dom";
+import UploadPage from "./pages/UploadPage/UploadPage";
+import "./App.scss";
 
 export default function App() {
   return (
     <BrowserRouter>
       <>
         <Nav />
-        <Main />
+        <Switch>
+          <Redirect from="/video" to="/" />
+          <Redirect from="/home" to="/" />
+          <Route path="/" exact component={Main} />
+          <Route path="/upload" component={UploadPage} />
+          <Route path="/:videoID" component={Main} />
+        </Switch>
       </>
     </BrowserRouter>
   )

@@ -1,9 +1,10 @@
 import "./Nav.scss";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
     return (
         <nav className="nav">
-            <a href="/" className="nav__logo"></a>
+            <Link to="/" className="nav__logo"></Link>
             <div className="nav__search-wrap">
                 <form>
                     <label>
@@ -12,7 +13,11 @@ export default function Nav() {
                 </form>
                 <div className="nav__avatar"></div>
             </div>
-            <button className="nav__button">upload</button>
+            <button className="nav__button">
+                <Link to="/upload">
+                    upload
+                </Link>
+            </button>
         </nav>
     )
 }

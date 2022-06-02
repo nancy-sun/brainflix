@@ -1,7 +1,8 @@
-import "./Playlist.scss";
 import videoDetails from "../../data/video-details.json";
+import { Link } from "react-router-dom";
+import "./Playlist.scss";
 
-export default function Playlist({ videoList, changeVideoList, currentVideo, changeCurrentVideo }) {
+export default function Playlist({ videoList, getVideosList, currentVideo, getVideoDetails }) {
     return (
         <section className="playlist">
             <p className="playlist__headline">next videos</p>
@@ -9,11 +10,11 @@ export default function Playlist({ videoList, changeVideoList, currentVideo, cha
                 {videoList.filter(video => video.id !== currentVideo.id).map(video => {
                     return (
                         <li key={video.id}>
-                            <a href="#" className="playlist__item" onClick={() => {
-                                changeVideoList(videoList);
+                            <Link to={`/${video.id}`} className="playlist__item" onClick={() => {
+                                getVideosList();
                                 videoDetails.forEach((videoObj) => {
                                     if (videoObj.id === video.id) {
-                                        changeCurrentVideo(videoObj);
+                                        getVideoDetails(videoObj.id);
                                     }
                                 })
                             }}>
@@ -22,7 +23,7 @@ export default function Playlist({ videoList, changeVideoList, currentVideo, cha
                                     <p className="playlist__title">{video.title}</p>
                                     <p className="playlist__channel">{video.channel}</p>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                     )
                 })}
