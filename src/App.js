@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Nav from "./components/Navbar/Nav";
+import Nav from "./components/Nav/Nav";
 import Main from "./components/Main/Main";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import "./App.scss";

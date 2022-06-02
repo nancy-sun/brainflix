@@ -29,7 +29,6 @@ export default class Main extends React.Component {
         let current = this.props.match.params.videoID;
         if (current && prevState.currentVideo.videoID != current) {
             console.log(current);
-
             // this.getVideoDetails(this.props.match.params.videoID);
         }
     }
