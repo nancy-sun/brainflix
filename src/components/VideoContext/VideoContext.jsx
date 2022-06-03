@@ -3,7 +3,7 @@ import "./VideoContext.scss";
 import { printDateString } from "../../utils/DateUtils";
 
 export default function VideoContext({ title, channel, timestamp, views, likes, description, comments }) {
-
+    // console.log(comments)
     return (
         <div className="video__context">
             <div className="video__text">

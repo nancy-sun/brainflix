@@ -1,4 +1,5 @@
 import "./UploadPage.scss";
+import { Link } from "react-router-dom";
 
 export default function UploadPage() {
     return (
@@ -19,7 +20,11 @@ export default function UploadPage() {
                 </label>
                 <div className="upload__buttons">
                     <button className="upload__publish">publish</button>
-                    <button type="button" className="upload__cancel">cancel</button>
+                    <button type="button" className="upload__cancel">
+                        <Link to="/">
+                            cancel
+                        </Link>
+                    </button>
                 </div>
             </form>
         </div>
