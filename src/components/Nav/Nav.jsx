@@ -13,11 +13,9 @@ export default function Nav() {
                 </form>
                 <div className="nav__avatar"></div>
             </div>
-            <button className="nav__button">
-                <Link to="/upload">
-                    upload
-                </Link>
-            </button>
+            <Link to="/upload" className="nav__button">
+                upload
+            </Link>
         </nav>
     )
 }

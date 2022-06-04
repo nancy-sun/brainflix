@@ -18,31 +18,31 @@ export default class Main extends React.Component {
 
     getVideosList = () => {
         axios.get(VIDEOS_LIST_URL)
-            .then(response =>
-                this.setState({ videoList: response.data })
+            .then(response => {
+                this.setState({ ...this.state.currentVideo, videoList: response.data });
+                if (!this.props.match.params.videoID) {
+                    this.getCurrentVideo(response.data[0].id)
+                }
+            }
             ).catch(e => console.log(e))
     }
 
     getCurrentVideo = (videoID) => {
         axios.get(`${API_URL}/videos/${videoID + API_KEY_PARAM}`)
             .then(response =>
-                this.setState({ currentVideo: response.data })
+                this.setState({ ...this.state.videoList, currentVideo: response.data })
             ).catch(e => console.log(e))
     }
 
-
     componentDidMount() {
         this.getVideosList();
-        this.getCurrentVideo("84e96018-4022-434e-80bf-000ce4cd12b8");
     }
 
     componentDidUpdate(prevProps, prevState) {
         let current = this.props.match.params.videoID;
         if (current && (prevState.currentVideo.id !== current)) {
             this.getCurrentVideo(current);
-        } else if (!current && this.state.currentVideo.id) {
-            this.setState({ currentVideo: {} })
-        }
+        } // to make sure the video get back to the default one after clicking the nav logo
     }
 
     render() {
