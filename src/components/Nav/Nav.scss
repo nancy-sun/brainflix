@@ -96,6 +96,9 @@
     &__button {
         @include buttonWithIcon("../../assets/images/icons/upload.svg", 23px);
         background-position: 0.5rem center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @include tablet {
             width: 18.5rem;

@@ -20,11 +20,9 @@ export default function UploadPage() {
                 </label>
                 <div className="upload__buttons">
                     <button className="upload__publish">publish</button>
-                    <button type="button" className="upload__cancel">
-                        <Link to="/">
-                            cancel
-                        </Link>
-                    </button>
+                    <Link to="/" className="upload__cancel">
+                        cancel
+                    </Link>
                 </div>
             </form>
         </div>

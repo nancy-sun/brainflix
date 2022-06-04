@@ -42,7 +42,9 @@ export default class Main extends React.Component {
         let current = this.props.match.params.videoID;
         if (current && (prevState.currentVideo.id !== current)) {
             this.getCurrentVideo(current);
-        } // to make sure the video get back to the default one after clicking the nav logo
+        } else {
+            this.getVideosList();
+        }
     }
 
     render() {
