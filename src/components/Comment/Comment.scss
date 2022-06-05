@@ -69,6 +69,10 @@
         color: $primary-light;
     }
 
+    &__delete {
+        border: none;
+    }
+
     &__text {
         margin-top: 0.6rem;
         font-size: 0.82rem;

@@ -9,6 +9,7 @@ export default function Comment({ name, comment, timestamp }) {
             <div className="comment__context">
                 <div className="comment__info">
                     <p className="comment__name">{name}</p>
+                    <button className="comment__delete"></button>
                     <p className="comment__time">{getTimeElapsed(date)}</p>
                 </div>
                 <p className="comment__text">{comment}</p>
