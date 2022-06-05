@@ -5,12 +5,12 @@ import React from "react";
 
 export default class CommentSection extends React.Component {
     render() {
-        let { comments, submitComment } = this.props;
+        let { comments, submitComment, deleteComment } = this.props;
         return (
             <div className="comment">
                 <p className="comment__total">{comments.length} {comments.length > 1 ? "comments" : "comment"}</p>
                 <CommentForm submitComment={submitComment} />
-                <CommentList comments={comments} />
+                <CommentList comments={comments} deleteComment={deleteComment} />
             </div>
 
         )

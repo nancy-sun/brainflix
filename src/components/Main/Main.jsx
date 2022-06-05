@@ -23,21 +23,17 @@ export default class Main extends React.Component {
             {
                 name: "anonymous",
                 comment: event.target.comment.value
-            })
+            }).then(() => {
+                this.getVideosList();
+            }).catch(e => alert(e));
+    }
+
+    deleteComment = (commentID) => {
+        axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${commentID + API_KEY_PARAM}`)
             .then(() => {
                 this.getVideosList();
-            }
-            )
-            .catch(e => alert(e));
-    }
-
-    deleteComment = (event) => {
-        axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${event.target.id + API_KEY_PARAM}`)
-            .then((response) => {
-                console.log(response)
             }).catch((e) => alert(e))
     }
-
 
     getVideosList = () => {
         axios.get(VIDEOS_LIST_URL)
@@ -79,7 +75,7 @@ export default class Main extends React.Component {
                     <source src={`${currentVideo.video}?api_key=cats`} type="video/mp4" />
                 </video>
                 <div className="video__body">
-                    <VideoContext {...currentVideo} submitComment={this.submitComment} />
+                    <VideoContext {...currentVideo} submitComment={this.submitComment} deleteComment={this.deleteComment} />
                     <Playlist videoList={this.state.videoList} currentVideo={currentVideo} />
                 </div>
             </main>

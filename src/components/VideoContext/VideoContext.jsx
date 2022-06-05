@@ -5,7 +5,7 @@ import React from "react";
 
 export default class VideoContext extends React.Component {
     render() {
-        let { title, channel, timestamp, views, likes, description, comments, submitComment } = this.props;
+        let { title, channel, timestamp, views, likes, description, comments, submitComment, deleteComment } = this.props;
 
         return (
             <div className="video__context">
@@ -26,7 +26,7 @@ export default class VideoContext extends React.Component {
                     <p className="video__description">{description}</p>
                 </div>
                 {comments &&
-                    <CommentSection comments={comments} submitComment={submitComment} />
+                    <CommentSection comments={comments} submitComment={submitComment} deleteComment={deleteComment} />
                 }
             </div>
         )

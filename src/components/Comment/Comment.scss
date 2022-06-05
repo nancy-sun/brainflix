@@ -67,10 +67,21 @@
 
     &__time {
         color: $primary-light;
+        margin-left: auto;
+        padding-right: 1rem;
     }
 
     &__delete {
+        cursor: pointer;
         border: none;
+        width: 13px;
+        height: 13px;
+        background-image: url("../../assets/images/icons/delete.svg");
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        align-self: center;
     }
 
     &__text {
