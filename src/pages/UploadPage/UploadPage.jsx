@@ -5,22 +5,30 @@ export default function UploadPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (isValidSubmit(e)) {
+            alert("video uploaded🎉");
+            window.location.replace("/");
+        } else {
+            alert("please choose a video file and give it a title and description");
+            return;
+        }
+    }
+
+    const isValidSubmit = (e) => {
         const form = e.target;
         const title = form.title;
         const description = form.description;
         const video = form.video;
 
         if (!title.value || !description.value || !video.value) {
-            alert("please choose a video file and give it a title and description");
             title.classList.add("upload__form-invalid");
             video.classList.add("upload__form-invalid");
             description.classList.add("upload__form-invalid");
-            console.log(form.title.className)
-            return;
+            return false;
+        } else {
+            return true;
         }
-
-        alert("video uploaded🎉");
-        window.location.replace("/");
     }
 
 

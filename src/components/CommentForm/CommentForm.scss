@@ -121,4 +121,8 @@
             }
         }
     }
+
+    &__invalid {
+        outline: 2px solid $error-color;
+    }
 }

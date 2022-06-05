@@ -19,14 +19,21 @@ export default class Main extends React.Component {
 
     submitComment = (event) => {
         event.preventDefault();
+        if (!event.target.comment.value) {
+            event.target.comment.classList.add("comment__invalid");
+            return;
+        }
+        event.target.comment.classList.remove("comment__invalid");
         axios.post(`${API_URL}/videos/${this.state.currentVideo.id}/comments${API_KEY_PARAM}`,
             {
                 name: "anonymous",
                 comment: event.target.comment.value
             }).then(() => {
                 this.getCurrentVideo(this.state.currentVideo.id);
+                event.target.reset();
             }).catch(e => alert(e));
     }
+
 
     deleteComment = (commentID) => {
         axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${commentID + API_KEY_PARAM}`)
