@@ -29,9 +29,9 @@ export default class Main extends React.Component {
 
     getCurrentVideo = (videoID) => {
         axios.get(`${API_URL}/videos/${videoID + API_KEY_PARAM}`)
-            .then(response =>
-                this.setState({ ...this.state.videoList, currentVideo: response.data })
-            ).catch(e => console.log(e))
+            .then(response => {
+                this.setState({ ...this.state.videoList, currentVideo: response.data }); //i think need to add an if statement here to prevent it from keep updating
+            }).catch(e => console.log(e))
     }
 
     componentDidMount() {
@@ -42,17 +42,18 @@ export default class Main extends React.Component {
         let current = this.props.match.params.videoID;
         if (current && (prevState.currentVideo.id !== current)) {
             this.getCurrentVideo(current);
-        } else {
+        } else if (!current && prevProps.match.params.videoID) {
             this.getVideosList();
         }
     }
+
 
     render() {
         const { currentVideo } = this.state;
         return (
             <main className="video" >
-                <video controls poster={currentVideo.image} className="video__hero">
-                    <source src={currentVideo.video + "?api_key=cats"} type="video/mp4" />
+                <video controls poster={currentVideo.image} className="video__hero" autoPlay>
+                    <source src={`${currentVideo.video}?api_key=cats`} type="video/mp4" />
                 </video>
                 <div className="video__body">
                     <VideoContext {...currentVideo} />
