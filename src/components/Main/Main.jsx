@@ -9,12 +9,35 @@ const API_KEY_PARAM = "?api_key=" + API_KEY;
 const API_URL = "https://project-2-api.herokuapp.com";
 const VIDEOS_LIST_URL = `${API_URL}/videos${API_KEY_PARAM}`;
 
+// `${API_URL}/videos/${this.state.currentVideo.id}/comments${API_KEY_PARAM}`
 export default class Main extends React.Component {
 
     state = {
         currentVideo: {},
-        videoList: []
+        videoList: [],
     }
+
+    submitComment = (event) => {
+        event.preventDefault();
+        axios.post(`${API_URL}/videos/${this.state.currentVideo.id}/comments${API_KEY_PARAM}`,
+            {
+                name: "anonymous",
+                comment: event.target.comment.value
+            })
+            .then(() => {
+                this.getVideosList();
+            }
+            )
+            .catch(e => alert(e));
+    }
+
+    deleteComment = (event) => {
+        axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${event.target.id + API_KEY_PARAM}`)
+            .then((response) => {
+                console.log(response)
+            }).catch((e) => alert(e))
+    }
+
 
     getVideosList = () => {
         axios.get(VIDEOS_LIST_URL)
@@ -56,7 +79,7 @@ export default class Main extends React.Component {
                     <source src={`${currentVideo.video}?api_key=cats`} type="video/mp4" />
                 </video>
                 <div className="video__body">
-                    <VideoContext {...currentVideo} />
+                    <VideoContext {...currentVideo} submitComment={this.submitComment} />
                     <Playlist videoList={this.state.videoList} currentVideo={currentVideo} />
                 </div>
             </main>
