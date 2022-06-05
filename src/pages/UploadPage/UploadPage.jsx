@@ -8,13 +8,21 @@ export default function UploadPage() {
         const form = e.target;
         const title = form.title.value;
         const description = form.description.value;
+        const video = form.video.value;
+
+        if (!title || !description || !video) {
+            console.log("please choose a video file and provide a title and description");
+            return;
+        }
+        alert("video uploaded🎉");
+        window.location.replace("/");
     }
 
 
     return (
         <div className="upload">
             <h1 className="upload__headline">Upload Video</h1>
-            <form className="upload__form" onSubmit={() => alert("new video submitted")}>
+            <form className="upload__form" onSubmit={handleSubmit}>
                 <label htmlFor="video" className="upload__label">
                     video thumbnail
                     <input type="file" name="video" id="video" accept="video/*" className="upload__video" />

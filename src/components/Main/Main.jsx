@@ -24,14 +24,14 @@ export default class Main extends React.Component {
                 name: "anonymous",
                 comment: event.target.comment.value
             }).then(() => {
-                this.getVideosList();
+                this.getCurrentVideo(this.state.currentVideo.id);
             }).catch(e => alert(e));
     }
 
     deleteComment = (commentID) => {
         axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${commentID + API_KEY_PARAM}`)
             .then(() => {
-                this.getVideosList();
+                this.getCurrentVideo(this.state.currentVideo.id);
             }).catch((e) => alert(e))
     }
 
