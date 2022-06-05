@@ -69,6 +69,12 @@
         color: $primary-light;
         margin-left: auto;
         padding-right: 1rem;
+
+        @include tablet {
+            margin-left: 0;
+            margin-right: auto;
+            padding-left: 1rem;
+        }
     }
 
     &__delete {

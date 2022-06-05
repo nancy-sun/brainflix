@@ -2,14 +2,23 @@ import "./UploadPage.scss";
 import { Link } from "react-router-dom";
 
 export default function UploadPage() {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const title = form.title.value;
+        const description = form.description.value;
+    }
+
+
     return (
         <div className="upload">
             <h1 className="upload__headline">Upload Video</h1>
-            <div className="upload__thumbnail-wrap">
-                <p className="upload__thumbnail-title">video thumbnail</p>
-                <div className="upload__thumbnail"></div>
-            </div>
-            <form className="upload__form">
+            <form className="upload__form" onSubmit={() => alert("new video submitted")}>
+                <label htmlFor="video" className="upload__label">
+                    video thumbnail
+                    <input type="file" name="video" id="video" accept="video/*" className="upload__video" />
+                </label>
                 <label htmlFor="title" className="upload__label">
                     title your video
                     <input type="text" name="title" id="title" placeholder="Add a title to your video" className="upload__title" />

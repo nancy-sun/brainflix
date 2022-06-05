@@ -12,27 +12,25 @@
         padding-bottom: 1rem;
     }
 
-    &__thumbnail {
+    &__video {
         background-image: url("../../assets/images/upload-video-preview.jpg");
         background-size: cover;
         height: 10rem;
         border-radius: 4px;
+        color: transparent;
+        cursor: pointer;
 
-        &-title {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            color: $primary-light;
-            font-weight: 500;
-            padding-bottom: 0.3rem;
-        }
-
-        &-wrap {
-            padding-bottom: 1.2rem;
+        &::file-selector-button {
+            display: none;
         }
     }
 
     &__label {
-        @extend .upload__thumbnail-title;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        color: $primary-light;
+        font-weight: 500;
+        padding-bottom: 0.3rem;
         display: flex;
         flex-direction: column;
         gap: 0.3rem;
