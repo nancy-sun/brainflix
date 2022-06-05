@@ -8,8 +8,6 @@ const API_KEY = "830df12b-8e7e-4107-8b33-1f3d5c527e44";
 const API_KEY_PARAM = "?api_key=" + API_KEY;
 const API_URL = "https://project-2-api.herokuapp.com";
 const VIDEOS_LIST_URL = `${API_URL}/videos${API_KEY_PARAM}`;
-
-// `${API_URL}/videos/${this.state.currentVideo.id}/comments${API_KEY_PARAM}`
 export default class Main extends React.Component {
 
     state = {
@@ -33,7 +31,6 @@ export default class Main extends React.Component {
                 event.target.reset();
             }).catch(e => alert(e));
     }
-
 
     deleteComment = (commentID) => {
         axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${commentID + API_KEY_PARAM}`)
@@ -72,7 +69,6 @@ export default class Main extends React.Component {
             this.getVideosList();
         }
     }
-
 
     render() {
         const { currentVideo } = this.state;

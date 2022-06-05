@@ -7,6 +7,7 @@ export default function UploadPage() {
         e.preventDefault();
 
         if (isValidSubmit(e)) {
+            e.target.reset();
             alert("video uploaded🎉");
             window.location.replace("/");
         } else {
