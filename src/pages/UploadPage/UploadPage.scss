@@ -94,6 +94,10 @@
         &::placeholder {
             color: $primary-dark;
         }
+
+        &:focus {
+            outline: 1px solid $primary-color;
+        }
     }
 
     &__description {
