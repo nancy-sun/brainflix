@@ -3,11 +3,8 @@ import VideoContext from "../VideoContext/VideoContext";
 import Playlist from "../Playlist/Playlist";
 import "./Main.scss";
 import axios from "axios";
+import { API_URL, VIDEOS_LIST_URL, API_KEY_PARAM } from "../../utils/APIUtils"
 
-const API_KEY = "830df12b-8e7e-4107-8b33-1f3d5c527e44";
-const API_KEY_PARAM = "?api_key=" + API_KEY;
-const API_URL = "https://project-2-api.herokuapp.com";
-const VIDEOS_LIST_URL = `${API_URL}/videos${API_KEY_PARAM}`;
 export default class Main extends React.Component {
 
     state = {

@@ -5,16 +5,7 @@ const API_KEY_PARAM = "?api_key=" + API_KEY;
 const API_URL = "https://project-2-api.herokuapp.com";
 const VIDEOS_LIST_URL = `${API_URL}/videos${API_KEY_PARAM}`;
 
-const videoDetailsUrl = (videoID) => { return `${API_URL}/videos/${videoID}${API_KEY_PARAM}` };
-
-let getVideosList = (component) => {
-    axios.get(VIDEOS_LIST_URL)
-        .then(response =>
-            component.setState({ videoList: response.data })
-        ).catch(e => console.log(e))
-}
 
 
 
-// export { getVideoDetails };
-export default getVideosList;
+export { API_URL, VIDEOS_LIST_URL, API_KEY_PARAM }
