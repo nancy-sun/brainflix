@@ -1,6 +1,5 @@
 @use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/_reset.scss" as *;
-@use "../../styles/partials/_typefaces.scss" as *;
 @use "../../styles/partials/_variables.scss" as *;
 
 .nav {
@@ -45,7 +44,7 @@
         background-repeat: no-repeat;
         border-radius: 4px;
         background-color: $secondary-lighter;
-        border: 1px solid $secondary-light;
+        border: $border;
         width: 15rem;
         height: 40px;
 
@@ -78,7 +77,6 @@
         background-position: 20% 0;
         background-size: cover;
         background-image: url("../../assets/images/mohan-muruge.jpg");
-        border-radius: 50%;
         margin-bottom: 1rem;
 
         @include tablet {
@@ -98,6 +96,9 @@
     &__button {
         @include buttonWithIcon("../../assets/images/icons/upload.svg", 23px);
         background-position: 0.5rem center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @include tablet {
             width: 18.5rem;
@@ -109,4 +110,5 @@
             margin-right: 7.5rem;
         }
     }
+
 }

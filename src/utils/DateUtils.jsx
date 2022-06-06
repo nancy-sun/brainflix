@@ -28,7 +28,7 @@ export default function getTimeElapsed(commentTimestamp) {
 
 function getDynamicUnit(timeElapsed, unit, unitStr) {
     let unitDiff = timeElapsed - unit;
-    let dynamicUnit = Math.round(unitDiff / unit);
+    let dynamicUnit = Math.ceil(unitDiff / unit);
     if (dynamicUnit > 0) {
         return `${dynamicUnit} ${unitStr}${dynamicUnit > 1 ? "s" : ""} ago`;
     }

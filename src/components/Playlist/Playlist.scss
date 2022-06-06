@@ -61,6 +61,7 @@
         background-size: cover;
         background-position: center;
         border-radius: 5px;
+        background-color: $secondary-light;
 
         @include tablet {
             min-width: 7rem;

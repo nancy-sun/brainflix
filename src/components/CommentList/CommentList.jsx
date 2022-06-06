@@ -1,14 +1,23 @@
+import { render } from "@testing-library/react";
 import Comment from "../Comment/Comment";
 import "./CommentList.scss";
-import { v4 as uuidv4 } from 'uuid';
+import React from "react";
 
-export default function CommentList({ comments }) {
-    return (
-        <ul className="comment__list">
-            {comments.map((commentObj) => {
-                return <Comment key={uuidv4()} commentObj={commentObj} />
-            })}
-        </ul>
-    )
+
+export default class CommentList extends React.Component {
+
+    render() {
+        let { comments, deleteComment } = this.props
+        let sortedComments = comments.sort((a, b) => {
+            return b.timestamp - a.timestamp;
+        });
+        return (
+            <ul className="comment__list">
+                {sortedComments && sortedComments.map((commentObj) => {
+                    return <Comment key={commentObj.id} {...commentObj} deleteComment={deleteComment} />
+                })}
+            </ul>
+        )
+    }
 }
 
