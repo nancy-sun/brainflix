@@ -14,7 +14,7 @@ export default function App() {
           <Redirect from="/home" to="/" />
           <Route path="/" exact component={Main} />
           <Route path="/upload" component={UploadPage} />
-          <Route path="/:videoID" component={Main} />
+          <Route path="/videos/:videoID" component={Main} />
         </Switch>
       </>
     </BrowserRouter>
