@@ -6,6 +6,7 @@
 .playlist {
     @include desktop {
         padding: 1.7rem 0 2rem 1.7rem;
+        width: 26rem;
     }
 
     &__list {

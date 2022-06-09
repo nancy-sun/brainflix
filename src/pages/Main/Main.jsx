@@ -1,6 +1,6 @@
 import React from "react";
-import VideoContext from "../VideoContext/VideoContext";
-import Playlist from "../Playlist/Playlist";
+import VideoContext from "../../components/VideoContext/VideoContext";
+import Playlist from "../../components/Playlist/Playlist";
 import "./Main.scss";
 import axios from "axios";
 import { API_URL, VIDEOS_LIST_URL, API_KEY_PARAM } from "../../utils/APIUtils"
