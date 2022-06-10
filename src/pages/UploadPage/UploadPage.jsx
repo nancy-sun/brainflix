@@ -1,5 +1,7 @@
 import "./UploadPage.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { VIDEOS_URL } from "../../utils/APIUtils";
 
 export default function UploadPage() {
 
@@ -7,6 +9,10 @@ export default function UploadPage() {
         e.preventDefault();
 
         if (isValidSubmit(e)) {
+            axios.post(VIDEOS_URL, {
+                title: e.target.title.value,
+                description: e.target.description.value
+            })
             e.target.reset();
             alert("video uploaded🎉");
             window.location.replace("/");
@@ -20,18 +26,15 @@ export default function UploadPage() {
         const form = e.target;
         const title = form.title;
         const description = form.description;
-        const video = form.video;
 
-        if (!title.value || !description.value || !video.value) {
+        if (!title.value || !description.value) {
             title.classList.add("upload__form-invalid");
-            video.classList.add("upload__form-invalid");
             description.classList.add("upload__form-invalid");
             return false;
         } else {
             return true;
         }
     }
-
 
     return (
         <div className="upload">

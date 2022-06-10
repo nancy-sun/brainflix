@@ -3,7 +3,7 @@ import VideoContext from "../../components/VideoContext/VideoContext";
 import Playlist from "../../components/Playlist/Playlist";
 import "./Main.scss";
 import axios from "axios";
-import { API_URL, VIDEOS_LIST_URL, API_KEY_PARAM } from "../../utils/APIUtils"
+import { API_URL, VIDEOS_URL } from "../../utils/APIUtils";
 
 export default class Main extends React.Component {
 
@@ -19,9 +19,8 @@ export default class Main extends React.Component {
             return;
         }
         event.target.comment.classList.remove("comment__invalid");
-        axios.post(`${API_URL}/videos/${this.state.currentVideo.id}/comments${API_KEY_PARAM}`,
+        axios.post(`${VIDEOS_URL}/${this.state.currentVideo.id}/comments`,
             {
-                name: "anonymous",
                 comment: event.target.comment.value
             }).then(() => {
                 this.getCurrentVideo(this.state.currentVideo.id);
@@ -30,14 +29,14 @@ export default class Main extends React.Component {
     }
 
     deleteComment = (commentID) => {
-        axios.delete(`${API_URL}/videos/${this.state.currentVideo.id}/comments/${commentID + API_KEY_PARAM}`)
+        axios.delete(`${VIDEOS_URL}/${this.state.currentVideo.id}/comments/${commentID}`)
             .then(() => {
                 this.getCurrentVideo(this.state.currentVideo.id);
             }).catch((e) => alert(e))
     }
 
     getVideosList = () => {
-        axios.get(VIDEOS_LIST_URL)
+        axios.get(VIDEOS_URL)
             .then(response => {
                 this.setState({ ...this.state.currentVideo, videoList: response.data });
                 if (!this.props.match.params.videoID) {
@@ -48,7 +47,7 @@ export default class Main extends React.Component {
     }
 
     getCurrentVideo = (videoID) => {
-        axios.get(`${API_URL}/videos/${videoID + API_KEY_PARAM}`)
+        axios.get(`${VIDEOS_URL}/${videoID}`)
             .then(response => {
                 this.setState({ ...this.state.videoList, currentVideo: response.data }); //i think need to add an if statement here to prevent it from keep updating
             }).catch(e => console.log(e))

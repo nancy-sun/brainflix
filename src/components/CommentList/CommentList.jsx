@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import Comment from "../Comment/Comment";
 import "./CommentList.scss";
 import React from "react";
@@ -14,6 +13,7 @@ export default class CommentList extends React.Component {
         return (
             <ul className="comment__list">
                 {sortedComments && sortedComments.map((commentObj) => {
+                    console.log(commentObj.id);
                     return <Comment key={commentObj.id} {...commentObj} deleteComment={deleteComment} />
                 })}
             </ul>
