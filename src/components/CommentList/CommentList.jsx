@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import Comment from "../Comment/Comment";
 import "./CommentList.scss";
 import React from "react";

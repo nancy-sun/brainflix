@@ -9,7 +9,7 @@ export default function Playlist({ videoList, currentVideo }) {
                 {videoList.filter(video => video.id !== currentVideo.id).map(video => {
                     return (
                         <li key={video.id}>
-                            <Link to={`/${video.id}`} className="playlist__item">
+                            <Link to={`/videos/${video.id}`} className="playlist__item">
                                 <div className="playlist__cover" style={{ backgroundImage: `url(${video.image})` }}></div>
                                 <div className="playlist__info">
                                     <p className="playlist__title">{video.title}</p>

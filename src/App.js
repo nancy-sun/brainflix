@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
-import Main from "./components/Main/Main";
+import Main from "./pages/Main/Main";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import "./App.scss";
 
@@ -14,7 +14,7 @@ export default function App() {
           <Redirect from="/home" to="/" />
           <Route path="/" exact component={Main} />
           <Route path="/upload" component={UploadPage} />
-          <Route path="/:videoID" component={Main} />
+          <Route path="/videos/:videoID" component={Main} />
         </Switch>
       </>
     </BrowserRouter>
