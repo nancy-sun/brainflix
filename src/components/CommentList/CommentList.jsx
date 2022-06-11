@@ -13,7 +13,6 @@ export default class CommentList extends React.Component {
         return (
             <ul className="comment__list">
                 {sortedComments && sortedComments.map((commentObj) => {
-                    console.log(commentObj.id);
                     return <Comment key={commentObj.id} {...commentObj} deleteComment={deleteComment} />
                 })}
             </ul>

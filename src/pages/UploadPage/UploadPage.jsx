@@ -2,6 +2,7 @@ import "./UploadPage.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { VIDEOS_URL } from "../../utils/APIUtils";
+import uploadImg from "../../assets/images/upload-video-preview.jpg";
 
 export default function UploadPage() {
 
@@ -11,11 +12,13 @@ export default function UploadPage() {
         if (isValidSubmit(e)) {
             axios.post(VIDEOS_URL, {
                 title: e.target.title.value,
-                description: e.target.description.value
-            })
-            e.target.reset();
-            alert("video uploaded🎉");
-            window.location.replace("/");
+                description: e.target.description.value,
+                image: uploadImg
+            }).then(() => {
+                e.target.reset();
+                alert("video uploaded🎉");
+                window.location.replace("/");
+            }).catch(e => console.log(e))
         } else {
             alert("please choose a video file and give it a title and description");
             return;
