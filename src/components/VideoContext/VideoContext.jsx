@@ -5,7 +5,7 @@ import React from "react";
 
 export default class VideoContext extends React.Component {
     render() {
-        let { title, channel, timestamp, views, likes, description, comments, submitComment, deleteComment } = this.props;
+        let { title, channel, timestamp, views, likes, description, comments, submitComment, deleteComment, likeVideo, id } = this.props;
 
         return (
             <div className="video__context">
@@ -19,7 +19,7 @@ export default class VideoContext extends React.Component {
                             </div>
                             <div className="video__data">
                                 <p className="video__views">{views}</p>
-                                <p className="video__likes">{likes}</p>
+                                <button className="video__likes" onClick={() => likeVideo(id)}>{likes}</button>
                             </div>
                         </div>
                     </div>

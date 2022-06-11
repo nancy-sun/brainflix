@@ -28,13 +28,6 @@ export default class Main extends React.Component {
             }).catch(e => alert(e));
     }
 
-    deleteComment = (commentID) => {
-        axios.delete(`${VIDEOS_URL}/${this.state.currentVideo.id}/comments/${commentID}`)
-            .then(() => {
-                this.getCurrentVideo(this.state.currentVideo.id);
-            }).catch((e) => alert(e))
-    }
-
     getVideosList = () => {
         axios.get(VIDEOS_URL)
             .then(response => {
@@ -49,8 +42,22 @@ export default class Main extends React.Component {
     getCurrentVideo = (videoID) => {
         axios.get(`${VIDEOS_URL}/${videoID}`)
             .then(response => {
-                this.setState({ ...this.state.videoList, currentVideo: response.data }); //i think need to add an if statement here to prevent it from keep updating
+                this.setState({ ...this.state.videoList, currentVideo: response.data });
             }).catch(e => console.log(e))
+    }
+
+    likeVideo = (videoID) => {
+        axios.put(`${VIDEOS_URL}/${videoID}/likes`)
+            .then(response => {
+                this.setState({ ...this.state.videoList, currentVideo: response.data });
+            })
+    }
+
+    deleteComment = (commentID) => {
+        axios.delete(`${VIDEOS_URL}/${this.state.currentVideo.id}/comments/${commentID}`)
+            .then(() => {
+                this.getCurrentVideo(this.state.currentVideo.id);
+            }).catch((e) => alert(e))
     }
 
     componentDidMount() {
@@ -70,14 +77,16 @@ export default class Main extends React.Component {
         const { currentVideo } = this.state;
         return (
             <main className="video" >
-                <video controls poster={currentVideo.image} className="video__hero" autoPlay>
-                    <source src={`${currentVideo.video}?api_key=cats`} type="video/mp4" />
-                </video>
+                <figure>
+                    <video poster={currentVideo.image} className="video__hero" controls>
+                        <source src={`http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4`} type="video/mp4" />
+                    </video>
+                </figure>
                 <div className="video__body">
-                    <VideoContext {...currentVideo} submitComment={this.submitComment} deleteComment={this.deleteComment} />
+                    <VideoContext {...currentVideo} submitComment={this.submitComment} deleteComment={this.deleteComment} likeVideo={this.likeVideo} />
                     <Playlist videoList={this.state.videoList} currentVideo={currentVideo} />
                 </div>
-            </main>
+            </main >
         )
     }
 }
